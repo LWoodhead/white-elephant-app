@@ -50,3 +50,4 @@ def test_player_compare(gary,cloneGary):
     
 def test_fail():
     assert False
+    
