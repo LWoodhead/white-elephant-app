@@ -3,12 +3,13 @@ class Gift:
         self.id = id
         self.title = title
         self.link = link
-        self.isOpen = True
+        self.isOpen = False
         self.image = image
         self.stolenCount = 0
         
     def __str__(self) -> str:
-        return "Gift(id: %d, title %s, link %s, isOpen: %r, stolenCount, %d" % (self.id,self.title,self.link,self.isOpen,self.stolenCount)
+        return "Gift(id: %d, title %s, link %s, isOpen: %r, stolenCount, %d" % (
+            self.id,self.title,self.link,self.isOpen,self.stolenCount)
     
     def __eq__(self, value: object) -> bool:
         if(value is None):
@@ -24,6 +25,3 @@ class Gift:
         if(self.stolenCount is not value.stolenCount):
             return False
         return True
-    
-def test():
-    assert True
