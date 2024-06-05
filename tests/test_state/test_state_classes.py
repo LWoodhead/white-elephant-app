@@ -47,3 +47,6 @@ def test_player_constructor(gary, garyGift):
 def test_player_compare(gary,cloneGary):
     assert gary == cloneGary
     assert gary is not None
+    
+def test_fail():
+    assert False
