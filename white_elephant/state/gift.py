@@ -12,16 +12,13 @@ class Gift:
             self.id,self.title,self.link,self.isOpen,self.stolenCount)
     
     def __eq__(self, value: object) -> bool:
-        if(value is None):
+        if not isinstance(value, Gift):
             return False
-        if(self.id is not value.id):
-            return False
-        if(self.title is not value.title):
-            return False
-        if(self.link is not value.link):
-            return False
-        if(self.isOpen is not value.isOpen):
-            return False
-        if(self.stolenCount is not value.stolenCount):
-            return False
-        return True
+        return (
+            self.id == value.id and
+            self.title == value.title and
+            self.link == value.link and
+            self.isOpen == value.isOpen and
+            self.image == value.image and
+            self.stolenCount == value.stolenCount
+        )
