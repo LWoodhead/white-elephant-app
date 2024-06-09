@@ -13,16 +13,12 @@ class Player:
             self.id,self.name,self.isLocked,str(self.originalGift),str(self.gameGift))
         
     def __eq__(self, value: object) -> bool:
-        if(value is None):
+        if not isinstance(value, Player):
             return False
-        if(self.id is not value.id):
-            return False
-        if(self.name is not value.name):
-            return False
-        if(self.originalGift != value.originalGift):
-            return False
-        if(self.gameGift is not value.gameGift):
-            return False
-        if(self.isLocked is not value.isLocked):
-            return False
-        return True
+        return (
+            self.id == value.id and
+            self.name == value.name and
+            self.originalGift == value.originalGift and
+            self.gameGift == value.gameGift and
+            self.isLocked == value.isLocked
+        )
