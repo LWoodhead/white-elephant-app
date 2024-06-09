@@ -31,6 +31,7 @@ class Game:
             self.currentTurnIndex,self.passCount,self.unlockedPlayerCount,self.playerCount,
             self.closedGiftCount,self.isStarted
         )
+        return output
         
     def __eq__(self, value: object) -> bool:
         if not isinstance(value, Game):
