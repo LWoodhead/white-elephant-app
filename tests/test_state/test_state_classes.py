@@ -93,7 +93,7 @@ def test_game_constructor(exampleGame, exampleRules, playerList):
     assert exampleGame.id == 1
     assert exampleGame.rules == exampleRules
     assert exampleGame.players == playerList
-    assert exampleGame.currentTurnIndex is None
+    assert exampleGame.index is None
     assert exampleGame.passCount is None
     assert exampleGame.unlockedPlayerCount is None 
     assert exampleGame.playerCount is None
@@ -105,14 +105,14 @@ def test_game_compare(exampleGame,cloneExampleGame):
     assert exampleGame is not None
     
 def test_start_game(exampleGame,cloneExampleGame,playerList):
-    assert exampleGame.currentTurnIndex is None
+    assert exampleGame.index is None
     assert exampleGame.passCount is None
     assert exampleGame.unlockedPlayerCount is None 
     assert exampleGame.playerCount is None
     assert exampleGame.closedGiftCount is None
     assert exampleGame.isStarted is False
     exampleGame.startGame()
-    assert exampleGame.currentTurnIndex == 0
+    assert exampleGame.index == 0
     assert exampleGame.passCount == 0
     assert exampleGame.unlockedPlayerCount == len(playerList) 
     assert exampleGame.playerCount == len(playerList)

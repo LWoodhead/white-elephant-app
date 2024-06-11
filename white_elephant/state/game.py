@@ -6,7 +6,7 @@ class Game:
         self.id = id
         self.rules = rules
         self.players = players
-        self.currentTurnIndex = None
+        self.index = None
         self.passCount = None
         self.unlockedPlayerCount = None
         self.playerCount = None
@@ -14,7 +14,7 @@ class Game:
         self.isStarted = False
         
     def startGame(self):
-        self.currentTurnIndex = 0
+        self.index = 0
         self.passCount = 0
         self.unlockedPlayerCount = len(self.players)
         self.playerCount = len(self.players)
@@ -28,7 +28,7 @@ class Game:
         for p in self.players:
             output += str(p)
         output += "currentIndex: %d\npasscount: %d\nunlockedPlayers: %d\nplayers: %d\nclosedGifts: %d\ngameStarted: %r)" % (
-            self.currentTurnIndex,self.passCount,self.unlockedPlayerCount,self.playerCount,
+            self.index,self.passCount,self.unlockedPlayerCount,self.playerCount,
             self.closedGiftCount,self.isStarted
         )
         return output
@@ -40,10 +40,11 @@ class Game:
             self.id == value.id and
             self.rules == value.rules and
             self.players == value.players and
-            self.currentTurnIndex == value.currentTurnIndex and
+            self.index == value.index and
             self.passCount == value.passCount and
             self.unlockedPlayerCount == value.unlockedPlayerCount and
             self.playerCount == value.playerCount and
             self.closedGiftCount == value.closedGiftCount and
             self.isStarted == value.isStarted
         )
+        
