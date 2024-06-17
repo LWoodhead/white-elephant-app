@@ -1,5 +1,5 @@
 from abc import ABC, abstractmethod
-from .record import Record
+from white_elephant.actions.record import Record
 import white_elephant.state.game as Game
 
 class Action(ABC):

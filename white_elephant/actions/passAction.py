@@ -1,5 +1,5 @@
-from .action import Action
-from .record import Record
+from white_elephant.actions.action import Action
+from white_elephant.actions.record import Record
 import white_elephant.state.game as Game
 
 class PassAction(Action):
