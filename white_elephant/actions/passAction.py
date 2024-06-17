@@ -1,11 +1,12 @@
 from .action import Action
 from .record import Record
-from state import game as Game
+import white_elephant.state.game as Game
 
 class PassAction(Action):
     def __init__(self) -> None:
         super().__init__()
 
+    @staticmethod
     def do(game: Game) -> Record:
         game.passCount+=1
         game.unlockedPlayerCount-=1
@@ -16,6 +17,7 @@ class PassAction(Action):
         passRecord = Record(data)
         return passRecord
 
+    @staticmethod
     def undo(game: Game, record: Record) -> None:
         if(record.data['type'] != "pass"):
             #TODO create log class and capture error
