@@ -18,11 +18,13 @@ class PassAction(Action):
         return passRecord
 
     @staticmethod
-    def undo(game: Game.Game, record: Record) -> None:
+    def undo(game: Game.Game, record: Record) -> int:
         if(record.data['type'] != "pass"):
             #TODO create log class and capture error
             print("Error, non pass value: %s" % (record.data['type'] != "pass"))
+            return 1
         game.index-=1
         game.players[game.index].isLocked = False
         game.unlockedPlayerCount+=1
         game.passCount-=1
+        return 0
