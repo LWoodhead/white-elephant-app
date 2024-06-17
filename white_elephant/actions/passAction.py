@@ -7,7 +7,7 @@ class PassAction(Action):
         super().__init__()
 
     @staticmethod
-    def do(game: Game) -> Record:
+    def do(game: Game.Game) -> Record:
         game.passCount+=1
         game.unlockedPlayerCount-=1
         game.players[game.index].isLocked = True
@@ -18,7 +18,7 @@ class PassAction(Action):
         return passRecord
 
     @staticmethod
-    def undo(game: Game, record: Record) -> None:
+    def undo(game: Game.Game, record: Record) -> None:
         if(record.data['type'] != "pass"):
             #TODO create log class and capture error
             print("Error, non pass value: %s" % (record.data['type'] != "pass"))

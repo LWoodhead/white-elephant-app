@@ -6,11 +6,11 @@ class Game:
         self.id = id
         self.rules = rules
         self.players = players
-        self.index = None
-        self.passCount = None
-        self.unlockedPlayerCount = None
-        self.playerCount = None
-        self.closedGiftCount = None
+        self.index: int = -1 
+        self.passCount: int = -1 
+        self.unlockedPlayerCount: int = -1
+        self.playerCount: int = -1
+        self.closedGiftCount: int = -1
         self.isStarted = False
         
     def startGame(self):
